@@ -12,24 +12,25 @@
     <link rel="stylesheet" href="styles.css">
     <title>Consulta</title>
 </head>
-
+// Se incluye un archivo PHP para la conexión a la base de datos y se prepara una consulta SQL que busca en la tabla personas 
+// utilizando la cédula ingresada por el usuario.
 <body>
     <div class="container-sm">
         <div class="consult-div">
             <?php
-            include 'conexion.php';
-
-            if (isset($_POST['cedula'])) {
+            include 'conexion.php'; //contiene la conexion a la base de datos
+//valida si se enviaron al metodo post la existencia de esa cedula
+            if (isset($_POST['cedula'])) { 
                 $cedula = $_POST['cedula'];
 
-                $sql = "SELECT id, nombre, apellido, cedula, cetro_deVotacion, mesa FROM personas WHERE cedula = ?";
+                $sql = "SELECT id, nombre, apellido, cedula, cetro_deVotacion, mesa FROM personas WHERE cedula = ?"; // busca en la base de datos la cedula dentro de la tabla personas
                 $stmt = $conn->prepare($sql);
 
                 if ($stmt) {
                     $stmt->bind_param("s", $cedula);
                     $stmt->execute();
                     $result = $stmt->get_result();
-
+                    //obtiene los resultados de la consulta
                     if ($result->num_rows > 0) {
                         // Display the title and header section once
                         echo "
@@ -79,5 +80,7 @@
         </div>
     </div>
 </body>
-
+//Este código permite consultar la información de votantes almacenada en una base de datos, mostrando los resultados en una página web con 
+//diseño responsivo gracias a Bootstrap. La consulta se realiza de manera segura usando PHP y declaraciones preparadas
+//para evitar vulnerabilidades comunes.
 </html>
