@@ -17,7 +17,7 @@
             <?php
             include 'conexion.php';
 
-            // Verificar si se ha enviado el formulario
+            // Verificar si se ha enviado el formulario e asigna los datos a la tabla
             if (isset($_POST['signUP'])) {
                 $cedula = $_POST['cedula'];
                 $nombre = $_POST['nombre'];
@@ -26,9 +26,9 @@
                 $numeromesa = $_POST['numeromesa'];
 
                 $sql = "INSERT INTO personas (cedula, nombre, apellido, cetro_deVotacion, mesa) 
-            VALUES (?, ?, ?, ?, ?)";
+            VALUES (?, ?, ?, ?, ?)"; //inserta los a la tabla de datos
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("ssssi", $cedula, $nombre, $apellido, $centrovotacion, $numeromesa);
+                $stmt->bind_param("ssssi", $cedula, $nombre, $apellido, $centrovotacion, $numeromesa); //vincula los parametros de consulta y los envia al mysql
 
                 if ($stmt->execute()) {
                     echo ' ';
@@ -41,7 +41,7 @@
             }
             ?>
             <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalChoice">
-                <div class="modal-dialog" role="document">
+                <div class="modal-dialog" role="document"> // crea un modal de confirmacion
                     <div class="modal-content rounded-3 shadow">
                         <div class="modal-body p-4 text-center">
                             <h5 class="mb-0">Registro exitoso</h5>
