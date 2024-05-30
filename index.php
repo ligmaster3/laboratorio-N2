@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+/*
+Explicación y Documentación del Código HTML
+Este código HTML crea una página web que contiene dos formularios: uno para registrar votantes y otro para consultar la mesa de votación de un votante. Aquí está una explicación detallada y documentada de cada sección del código:
+*/
 
 <head>
     <meta charset="UTF-8" />
