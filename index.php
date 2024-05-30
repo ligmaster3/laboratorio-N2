@@ -36,7 +36,9 @@ Este código HTML crea una página web que contiene dos formularios: uno para re
         </div>
 
 <script>
-
+/*Este documento HTML crea una interfaz de usuario sencilla para registrar votantes y consultar su mesa de votación. Utiliza formularios 
+para capturar y enviar datos al servidor, y emplea tecnologías web estándar como HTML, CSS y 
+    scripts de terceros para la funcionalidad y estilo. */
 </script>
        
         <form action="consultar.php" method="post">
