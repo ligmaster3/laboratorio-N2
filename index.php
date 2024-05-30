@@ -18,8 +18,8 @@ Este código HTML crea una página web que contiene dos formularios: uno para re
 
 <body>
     <main>
-        <div class="login">
-            <form action="registrar.php" method="post">
+        <div class="login">//definimos  el contenedor
+            <form action="registrar.php" method="post"> //define los datos que se enviaran al utilizar el registro
                 <h1>Registro de Votantes</h1>
                 <label for="">Cédula:</label>
                 <input type="text" name="cedula" placeholder="Introduzca su Cedula" required /><br />
